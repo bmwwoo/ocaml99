@@ -19,3 +19,12 @@ let rec last_two = function
   | _ :: b -> last_two b
 ;;
 
+(* Find the k'th element of a list.  I do it 0 based. *)
+
+let rec at k list = match list with
+  | [] -> None
+  | a :: b -> if k = 0
+              then Some a
+              else at (k - 1) b
+;;
+
