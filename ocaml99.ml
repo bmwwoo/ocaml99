@@ -28,3 +28,13 @@ let rec at k list = match list with
               else at (k - 1) b
 ;;
 
+(* Find the nubmer of elements of a list. *)
+
+let rec length_help list n = match list with
+  | [] -> n
+  | _ :: b -> length_help b (n + 1)
+;;
+
+let length list = 
+  length_help list 0
+;; 
